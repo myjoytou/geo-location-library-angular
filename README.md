@@ -1,5 +1,5 @@
 # Simple library for getting Current City, State, Country and Locality name
-
+## [Demo](https://plnkr.co/edit/zjDqed?p=preview)
 ## Dependencies
 	
 * [Google map API](https://maps.googleapis.com/maps/api/js)
@@ -48,7 +48,7 @@ ex:
 	$scope.countryStateMap = {
 	  'india': ['Karnataka', 'Bihar', 'Maharashtra', 'Punjab']
 	};
-	
+
 ```
 
 According to this list, the select option will come. One more thing we have the option to stick our own __css__ too.
