@@ -7,7 +7,7 @@
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(deferred.resolve, deferred.reject);
       } else {
-        alert("geo location not supported");
+        console.log("geo location not supported");
       }
       return deferred.promise;
     };
@@ -42,7 +42,7 @@
         'latLng': latlng
       }, function(results, status) {
 
-        var neighbourhood, area, city, state, country, postalCode, completeAddress;
+        var neighborhood, area, city, state, country, postalCode, completeAddress;
 
         if (status == google.maps.GeocoderStatus.OK) {
           if (results[1]) {
@@ -51,10 +51,7 @@
               for (var b = 0; b < results[0].address_components[i].types.length; b++) {
                 switch (results[0].address_components[i].types[b]) {
                   case 'neighborhood':
-                    neighbourhood = results[0].address_components[i];
-                    break;
-                  case 'sublocality_level_3':
-                    neighbourhood = results[0].address_components[i]; 
+                    neighborhood = results[0].address_components[i];
                     break;
                   case 'sublocality':
                     area = results[0].address_components[i];
@@ -70,12 +67,12 @@
                     break;
                   case 'postal_code':
                     postalCode = results[0].address_components[i];
-                } 
+                }
               }
             }
             // area, city, state, country, postalCode, completeAddress
             var geoInfoHash = {
-              neighbourhood: neighbourhood,
+              neighborhood: neighborhood,
               area: area,
               city: city,
               state: state,
@@ -83,7 +80,7 @@
               postalCode: postalCode,
               completeAddress: completeAddress
             };
-            
+
             deferred.resolve(geoInfoHash);
 
           } else {
@@ -99,8 +96,8 @@
       getCity: function() {
         return geoInfo.city;
       },
-      getNeighbourhood: function() {
-        return geoInfo.neighbourhood;
+      getNeighborhood: function() {
+        return geoInfo.neighborhood;
       },
       getArea: function() {
         return geoInfo.area;
@@ -125,7 +122,7 @@
               deferred.resolve(response);
             },
             function(response) {
-              alert('could not locate ');
+              alert('could not locate!');
             }
           );
         });
@@ -191,8 +188,9 @@
         $scope.geoArea = {};
         GeoAddressDecoderService.getDecodedLocation().then(function(response) {
           $scope.geoArea.areaInfo = GeoAddressDecoderService.getArea().long_name.capitalize();
-          $scope.geoArea.neighbourhood = GeoAddressDecoderService.getNeighbourhood().long_name.capitalize();
+          $scope.geoArea.neighbourhood = GeoAddressDecoderService.getNeighborhood().long_name.capitalize();
           $scope.geoArea.neighbourhoodInfo = $scope.geoArea.neighbourhood + ", " + $scope.geoArea.areaInfo;
+          console.log('the area is: ', $scope.geoArea.areaInfo);
         });
       }]
     };
