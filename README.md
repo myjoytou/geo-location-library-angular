@@ -1,7 +1,7 @@
 # Simple library for getting Current City, State, Country and Locality name
 
 ##Dependencies
-	* [Google map API ] (https://maps.googleapis.com/maps/api/js)
+	* ![Google map API ] (https://maps.googleapis.com/maps/api/js)
 	* AngularJs
 
 ##How to use it?
