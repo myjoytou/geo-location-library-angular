@@ -19,13 +19,16 @@ The directives are:
 
 They can be used like:
 	
-	```html
-		<geo_city css-class='city-box' country-city-map='countryCityMap'> </geo_city>
+```html
+	<geo_city css-class='city-box' country-city-map='countryCityMap'> </geo_city>
+```
 
-		<geo_state css-class='city-box' country-state-map='countryStateMap'> </geo_state>
-
-		<geo_neighbourhood css-class='city-box'></geo_neighbourhood>
-	```
+```html
+	<geo_state css-class='city-box' country-state-map='countryStateMap'> </geo_state>
+```
+```html
+	<geo_neighbourhood css-class='city-box'></geo_neighbourhood>
+```
 
 __Note:__
 
@@ -36,14 +39,16 @@ __Note:__
 
 ex:
 	
-	```javascript
-		$scope.countryCityMap = {
-		  'india': ['Chennai', 'Bangalore', 'Mumbai', 'New Delhi', 'Patna']
-		};
+```javascript
 
-		$scope.countryStateMap = {
-		  'india': ['Karnataka', 'Bihar', 'Maharashtra', 'Punjab']
-		};
-	```
+	$scope.countryCityMap = {
+	  'india': ['Chennai', 'Bangalore', 'Mumbai', 'New Delhi', 'Patna']
+	};
+
+	$scope.countryStateMap = {
+	  'india': ['Karnataka', 'Bihar', 'Maharashtra', 'Punjab']
+	};
+	
+```
 
 According to this list, the select option will come. One more thing we have the option to stick our own __css__ too.
