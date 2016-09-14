@@ -11,8 +11,8 @@
 >	* Include the **geo_library_service.js** in a script tag source and 
 >	* In your angular module put a dependency for **geoAutoComplete**.
 > ```javascript
-		angular.module('myApp', ['geoAutoComplete'])
-	```
+>		angular.module('myApp', ['geoAutoComplete'])
+>	```
 
 This library provides you few directive for getting city, state, and current locality.
 The directives are:
